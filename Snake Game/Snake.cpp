@@ -1,5 +1,6 @@
 #include <iostream>
 #include <conio.h>
+#include<windows.h>
 using namespace std;
 
 bool gameOver;
@@ -28,7 +29,7 @@ void Draw()
 	system("cls");
 	for (int i = 0; i < width+2; i++)
 		cout << "#";
-	cout << endl;
+	cout << "\n";
 
 	for (int i = 0; i < height; i++)
 	{
@@ -59,12 +60,12 @@ void Draw()
 			if (j == width - 1)
 				cout << "#";
 		}
-		cout << endl;
+		cout << "\n";
 	}
 
 	for (int i = 0; i < width+2; i++)
 		cout << "#";
-	cout << endl;
+	cout << "\n";
 	cout << "Score: " << score << endl;
 }
 
@@ -150,6 +151,13 @@ int main()
 	while (!gameOver)
 	{
 		Draw();
+
+		Sleep(10);
+
+		if (dir == UP || dir == DOWN)
+		{
+			Sleep(50);
+		}
 		Input();
 		Logic();
 
